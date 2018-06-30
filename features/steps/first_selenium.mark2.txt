@@ -1,0 +1,16 @@
+from behave import *
+from selenium import webdriver
+#use_step_matcher("re")
+
+#@given("I open selenium framework website")
+def step_impl(context):
+    context.c = 1
+    context.d = 2
+#@when("I decide web")
+def step_impl(context):
+    context.jum = int(context.c) + int(context.d)
+    driver = webdriver.Chrome('/Users/rajadavid/PycharmProjects/test_bdd/chromedriver')
+    driver.get('http://www.google.com')
+#@then("I print the title")
+def step_impl(context):
+    print("Sum of", context.c, "and", context.d, "is:",context.jum)
